@@ -11,7 +11,7 @@ if __name__ == '__main__':
     leaves_or_needles = leaves_or_needles.lower()
 
     if leaves_or_needles == "l":
-        simple_or_compound = input("Are the leaves simple (s) or compound (c)? ")
+        simple_or_compound = input("Are leaves simple (s) or compound (c)? ")
         simple_or_compound = simple_or_compound.lower()
         if simple_or_compound == "s":
             print("Maple")
@@ -20,15 +20,13 @@ if __name__ == '__main__':
         else:
             print("Invalid choice!")
     elif leaves_or_needles == "n":
-        individ_or_clust = input("Are needles individual or clustered (i or c)? ")
-        individ_or_clust = individ_or_clust.lower()
-        if individ_or_clust == "i":
+        needle_type = input("Are needles individual or clustered (i or c)? ")
+        needle_type = needle_type.lower()
+        if needle_type == "i":
             print("Spruce")
-        elif individ_or_clust == "c":
+        elif needle_type == "c":
             print("Pine")
         else:
             print("Invalid choice!")
     else:
         print("Invalid choice!")
-
-
