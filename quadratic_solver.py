@@ -8,15 +8,15 @@ Program finds roots of a quadratic polynomial, if any
 import math
 
 if __name__ == '__main__':
-    
+
     a = float(input("Enter value for a: "))
     b = float(input("Enter value for b: "))
     c = float(input("Enter value for c: "))
 
 
     def calc_discriminant(a, b, c):
-        discriminant = (b ** 2 - (4 * a * c))
-        return discriminant
+        calc_discriminant = (b ** 2 - (4 * a * c))
+        return calc_discriminant
 
 
     d = calc_discriminant(a, b, c)
