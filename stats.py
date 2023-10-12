@@ -1,5 +1,5 @@
 """
-Euclidean Division
+Stats
 Dakota Marosi
 CS 1210
 Program does Euclidean divison by repeated subtraction, a la the old days
