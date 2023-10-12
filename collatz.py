@@ -2,7 +2,7 @@
 Collatz
 Dakota Marosi
 CS 1210
-Program 
+Program generates the famous Collatz sequence! :)
 """
 
 def next_collatz(n):
