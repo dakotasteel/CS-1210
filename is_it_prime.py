@@ -2,16 +2,16 @@
 Is It Prime?
 Dakota Marosi
 CS 1210
-Program generates the famous Collatz sequence! :)
+Program tests if a user inputted number is prime or not
 """
 
 
 def prime_test(n):
     for i in range(2, n):
         if (n % i) == 0:
-            return True
+            return False
     else:
-        return False
+        return True
 
 
 if __name__ == "__main__":
@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     t_or_f = prime_test(get_num)
 
-    if t_or_f == True:
+    if t_or_f == False:
         print(f"{get_num} is not prime.")
     else:
         print(f"{get_num} is prime.")
