@@ -8,10 +8,10 @@ Program generates the famous Collatz sequence! :)
 
 def prime_test(n):
     for i in range(2, n):
-        if n % i == 0:
+        if (n % i) == 0:
             return True
-        else:
-            return False
+    else:
+        return False
 
 
 if __name__ == "__main__":
