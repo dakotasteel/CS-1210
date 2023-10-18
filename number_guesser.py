@@ -47,10 +47,10 @@ def guess(target, guesses):
 
     while running is True:
         get_guess = int(input("Enter your guess: "))
-        if get_guess is target:
+        if get_guess == target:
             guesses.append(get_guess)
             running = False
-            return True, guesses
+            return True
         elif get_guess <= 0 or get_guess >= 1025:
             print("INVALID! Guesses must be in range [1, 1024]. Try again.")
             running = True
@@ -60,7 +60,7 @@ def guess(target, guesses):
         else:
             guesses.append(get_guess)
             running = False
-            return False, guesses
+            return False
 
 
 def play(target):
@@ -76,26 +76,22 @@ def play(target):
     win = False
 
     for i in range(10):
-        hey = guess(target, guesses)
-        print(hey)
-        print(f"{target}")
-        
-        print(f"{guesses}")
+        win_or_not = guess(target, guesses)
 
-        if target in guesses:
+        if win_or_not is True:
             win = True
-            exit
-        elif len(guesses) == MAX_GUESSES:
-            win = False
-            exit
+            break
         elif guesses[i] > target:
             print("Guess is too HIGH!")
         elif guesses[i] < target:
             print("Guess is too LOW!")
+        elif len(guesses) == MAX_GUESSES:
+            win = False
+            break
 
     if win is True:
-        print(f"You WIN! The secret number was {target} and \
-            it took you {len(guesses)} guesses.")
+        print(f"""You WIN! The secret number was {target} /n
+              and it took you {len(guesses)} guesses.""")
     else:
         print(f"You LOSE! The secret number was {target}.")
 
@@ -105,6 +101,5 @@ if __name__ == '__main__':
         random.seed(sys.argv[1])         # Don't change this line!
     print(f"Try to guess the secret number from 1 to {UPPER_BOUND}.")
     secret_number = random.randint(1, UPPER_BOUND)
-    print(f"{secret_number}")
     play(secret_number)                  # Don't change this line!
     # No more lines are needed here!
