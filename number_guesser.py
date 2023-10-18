@@ -81,16 +81,16 @@ def play(target):
         if win_or_not is True:
             win = True
             break
+        elif len(guesses) == MAX_GUESSES:
+            win = False
+            break
         elif guesses[i] > target:
             print("Guess is too HIGH!")
         elif guesses[i] < target:
             print("Guess is too LOW!")
-        elif len(guesses) == MAX_GUESSES:
-            win = False
-            break
 
     if win is True:
-        print(f"""You WIN! The secret number was {target} /n
+        print(f"""You WIN! The secret number was {target} 
               and it took you {len(guesses)} guesses.""")
     else:
         print(f"You LOSE! The secret number was {target}.")
