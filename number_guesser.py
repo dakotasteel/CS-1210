@@ -45,21 +45,21 @@ def guess(target, guesses):
     """
     running = True
 
-    while running == True:
+    while running is True:
         get_guess = int(input("Enter your guess: "))
-        if get_guess == target:
+        if get_guess is target:
             guesses.append(get_guess)
-            running == False
+            running = False
             return True, guesses
         elif get_guess <= 0 or get_guess >= 1025:
-            print("INVALID! Guesses must be in the range [1, 1024]. Try again.")
-            running == True
+            print("INVALID! Guesses must be in range [1, 1024]. Try again.")
+            running = True
         elif get_guess in guesses:
             print(f"INVALID! You have already guessed {get_guess}. Try again.")
-            running == True
+            running = True
         else:
             guesses.append(get_guess)
-            running == False
+            running = False
             return False, guesses
 
 
@@ -69,31 +69,42 @@ def play(target):
     make guesses until they WIN! or they run out of guesses, in which case they
     LOSE! You should have a loop, and within the loop you should call the
     guess() function (above) as needed. It is in this function that you should
-    report the number of guesses remaining, whether the current guess is HIGH!
-    or LOW! (if not a WIN!), and the final outcome of the game: WIN! or
-    LOSE!"""
+    report the number of guesses remaining, whether the current guess is
+    HIGH! or LOW! (if not a WIN!), and the final outcome of the game:
+    WIN! or LOSE!"""
     guesses = []
     win = False
 
     for i in range(10):
-        guess(target, guesses)
+        hey = guess(target, guesses)
+        print(hey)
+        print(f"{target}")
+        
+        print(f"{guesses}")
 
         if target in guesses:
             win = True
-            print(f"You WIN! The secret number was {target} and it took you {len(guesses)} guesses.")
+            exit
         elif len(guesses) == MAX_GUESSES:
             win = False
-            print(f"You LOSE! The secret number was {target}.")
+            exit
         elif guesses[i] > target:
             print("Guess is too HIGH!")
-        else:
+        elif guesses[i] < target:
             print("Guess is too LOW!")
 
-      
+    if win is True:
+        print(f"You WIN! The secret number was {target} and \
+            it took you {len(guesses)} guesses.")
+    else:
+        print(f"You LOSE! The secret number was {target}.")
+
+
 if __name__ == '__main__':
     if len(sys.argv) > 1:                # Don't change this line!
         random.seed(sys.argv[1])         # Don't change this line!
-    print(f"Try to guess the secret number from 1 to {UPPER_BOUND}.")     
+    print(f"Try to guess the secret number from 1 to {UPPER_BOUND}.")
     secret_number = random.randint(1, UPPER_BOUND)
+    print(f"{secret_number}")
     play(secret_number)                  # Don't change this line!
     # No more lines are needed here!
