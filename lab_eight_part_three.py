@@ -10,4 +10,4 @@ if __name__ == "__main__":
     with open(file_name, 'r') as f:
         for line in f:
             counter += 1
-            print(f'{counter}: {line}')
+            print(f'{counter:>4}: {line}')
