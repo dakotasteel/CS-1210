@@ -14,8 +14,6 @@ def mean(lst):
         mean += i
     mean = mean / counter
     return mean
-    
-    # Calculate and return the mean of the argument supplied for lst.
 
 
 def std_dev(lst):
@@ -36,18 +34,17 @@ def std_dev(lst):
     return sum_tot
 
 if __name__ == "__main__":
-    lst1 = []
-    lst2 = []
+    lst = []
     with open('co2_ppm.csv', newline = '') as f:
         reader = csv.reader(f)
         for row in reader:
-            lst1.append(float(row[0]))
-            lst2.append(float(row[1]))
+            lst.append(float(row[1]))
 
-    avg = mean(lst2)
-    std_dev_2 = std_dev(lst2)
+    avg = mean(lst)
+    std_dev_2 = std_dev(lst)
+    most_recent = lst[184]
 
-
-    # Read data from file into a list of floats
-    # Function call(s) to `mean()` and `std_dev()` as needed.
-    # Write results to file.
+    with open('results.txt', 'w') as f:
+        f.write(f'Mean: {avg:.2f}\n')
+        f.write(f'Standard deviation: {std_dev_2:.2f}\n')
+        f.write(f'Most recent observation: {most_recent:.2f}\n')
