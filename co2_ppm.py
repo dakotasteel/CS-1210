@@ -9,9 +9,9 @@ import math
 def mean(lst):
     mean = 0
     counter = 0
-    for _ in range(185):
+    for i in lst:
         counter += 1
-        mean +=  int(lst[_:])
+        mean += i
     mean = mean / counter
     return mean
     
@@ -20,20 +20,18 @@ def mean(lst):
 
 def std_dev(lst):
     sum = []
-    average = 0
+    counter = 0
+    average = mean(lst)
 
-    for _ in range(5):
-        average +=  lst[_]
-    average = average / 5
-
-    for _ in range(5):
-        new_square = (lst[_] - average) ** 2
+    for i in lst:
+        new_square = (i - average) ** 2
         sum.append(new_square)
     
     sum_tot = 0
-    for _ in range(5):
-        sum_tot += sum[_]
-    sum_tot = sum_tot/5
+    for i in sum:
+        counter += 1
+        sum_tot += i
+    sum_tot = sum_tot/counter
     sum_tot = math.sqrt(sum_tot)
     return sum_tot
 
@@ -43,10 +41,12 @@ if __name__ == "__main__":
     with open('co2_ppm.csv', newline = '') as f:
         reader = csv.reader(f)
         for row in reader:
-            lst1.append(row[1:])
-            lst2.append(row[0:1])
+            lst1.append(float(row[0]))
+            lst2.append(float(row[1]))
 
-    mean(lst1)
+    avg = mean(lst2)
+    std_dev_2 = std_dev(lst2)
+
 
     # Read data from file into a list of floats
     # Function call(s) to `mean()` and `std_dev()` as needed.
