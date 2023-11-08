@@ -11,23 +11,23 @@ def shuffle(lst):
     new_list = []
     for i in range(counter):
         picked_element = random.choice(lst)
-        new_list = new_list.append(picked_element)
+        new_list.append(picked_element)
         lst.pop(lst.index(picked_element))
-    print()
+    return(new_list)
 
 if __name__ == "__main__":
-    old_list = []
-    list_length = 0
-    while list_length == 0:
+    lst = []
+    while True:
         list_length = int(input("How many elements in your list? (n > 5): "))
+        if list_length > 5:
+            break
     
     print(f"Okay. {list_length} items in your list.")
     for i in range(list_length):
-        element = int(input(f"Enter item at index {i}: "))
-        old_list.append(element)
-
+        element = (input(f"Enter item at index {i}: "))
+        lst.append(element)
+    
+    old_list = lst.copy()
     new_list = shuffle(old_list)
-    print(old_list)
+    print(lst)
     print(new_list)
-
-        
