@@ -2,7 +2,7 @@
 CS 1210
 Lab #10
 Dakota Marosi
-November 8th,, 2023
+November 8th, 2023
 """
 import random
 
