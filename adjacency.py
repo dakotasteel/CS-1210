@@ -13,3 +13,12 @@ if __name__ == "__main__":
                "Qani" : ["Ichabod", "Egbert", "Victor"],
                "Farrah" : ["Ichabod", "Egbert", "Victor"],
                "Kamala" : []}
+
+    for keys in FRIENDS:
+        print(keys)
+    
+    for values in FRIENDS.values():
+        print(values)
+
+    for keys, values in FRIENDS.items():
+        print(f'{keys}: {values}')
