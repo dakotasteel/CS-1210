@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     while True:
         try:
-            d = input("Enter the distance between the centers of the bodies in m: ")
+            d = input("Enter the distance between the bodies in m: ")
             d = float(d)
             if d > 0:
                 break
