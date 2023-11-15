@@ -25,7 +25,8 @@ def calc_force(m1, m2, r):
 if __name__ == '__main__':
     while True:
         try:
-            m_01 = float(input("Enter the mass of body 01 in kg: "))
+            m_01 = input("Enter the mass of body 01 in kg: ")
+            m_01 = float(m_01)
             if m_01 > 0:
                 break
         except ValueError:
@@ -33,7 +34,8 @@ if __name__ == '__main__':
 
     while True:
         try:
-            m_02 = float(input("Enter the mass of body 02 in kg: "))
+            m_02 = input("Enter the mass of body 02 in kg: ")
+            m_02 = float(m_02)
             if m_02 > 0:
                 break
         except ValueError:
@@ -41,7 +43,8 @@ if __name__ == '__main__':
 
     while True:
         try:
-            d = float(input("Enter the distance between the centers of the bodies in m: "))
+            d = input("Enter the distance between the centers of the bodies in m: ")
+            d = float(d)
             if d > 0:
                 break
         except ValueError:
