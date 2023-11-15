@@ -27,7 +27,7 @@ if __name__ == '__main__':
         try:
             m_01 = input("Enter the mass of body 01 in kg: ")
             m_01 = int(m_01)
-            if m_01 >= 0:
+            if m_01 > 0:
                 break
         except ValueError:
             print(f'"{m_01}" cannot be converted to an int!')
@@ -36,7 +36,7 @@ if __name__ == '__main__':
         try:
             m_02 = input("Enter the mass of body 02 in kg: ")
             m_02 = int(m_02)
-            if m_02 >= 0:
+            if m_02 > 0:
                 break
         except ValueError:
             print(f'"{m_02}" cannot be converted to an int!')
@@ -45,7 +45,7 @@ if __name__ == '__main__':
         try:
             d = input("Enter the distance between the centers of the bodies in m: ")
             d = int(d)
-            if d >= 0:
+            if d > 0:
                 break
         except ValueError:
             print(f'"{d}" cannot be converted to an int!')
